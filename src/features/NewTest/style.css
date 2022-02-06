@@ -1,0 +1,7 @@
+.form-group > input{
+    margin-right: 6px;
+}
+input[type="submit"]{
+    /* display:block; */
+    margin-top: 6px;
+}
