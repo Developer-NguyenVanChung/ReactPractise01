@@ -1,16 +1,18 @@
-import Header from "./components/Header";
-import ShowSongs from "./features/ShowSongs";
-import NewTest from "./features/NewTest";
-import ChangeNumber from "./features/ChangeNumber";
-import TodoListVersion1 from "./features/TodoListVersion1";
 import { useState } from "react";
-import UseEffectFeature from "./features/UseEffect";
-import OtherFeature from "./features/OtherFeature";
-import TabsWithApi from "./features/TabsWithApi";
-import GoToTopButton from "./features/GoToTopButton";
-import WidthOfWindow from "./features/WidthOfWindow";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import CountDown from "./features/CountDown";
+import GoToTopButton from "./features/GoToTopButton";
+import ContactPage from "./features/pages/ContactPage";
+import HomePage from "./features/pages/HomePage";
+import NewsPage from "./features/pages/NewsPage";
 import ShowImage from "./features/ShowImage";
+import ShowSongs from "./features/ShowSongs";
+import TabsWithApi from "./features/TabsWithApi";
+import TodoListVersion1 from "./features/TodoListVersion1";
+import UseEffectFeature from "./features/UseEffect";
+import UseMemoHook from "./features/UseMemoHook";
+import WidthOfWindow from "./features/WidthOfWindow";
 
 const userdata = [
   {
@@ -1014,32 +1016,14 @@ function App() {
 
   return (
     <div className="container">
-      <Header
-        data={userdata}
-        info="this is infomation"
-        newdata="newData"
-        data2={phone}
-        data60User={newData}
-      />
-      <ShowImage />
-      <CountDown />
-      <WidthOfWindow />
-      <GoToTopButton />
-      <TabsWithApi />
-      {/* <NewTest /> */}
-      {/* <ChangeNumber /> */}
-      {/* <OtherFeature /> */}
-      <UseEffectFeature />
-      <button className="btn btn-primary" onClick={() => setShow(!show)}>
-        Show or Hidden
-      </button>
-      {show && <TodoListVersion1 />}
-
-      <ShowSongs
-        dataOfSongs={zingMp3Data}
-        dataofSongs2={zingMp3Data2}
-        run={false}
-      />
+      <Header data={userdata} info="this is infomation" newdata="newData" data2={phone} data60User={newData} />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/song" element={<ShowSongs dataOfSongs={zingMp3Data} dataofSongs2={zingMp3Data2} run={false} />} />
+        <Route path='/dataServer' element={<TabsWithApi />} />
+      </Routes>
     </div>
   );
 }
