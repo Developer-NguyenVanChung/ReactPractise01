@@ -5,6 +5,12 @@ import ChangeNumber from "./features/ChangeNumber";
 import TodoListVersion1 from "./features/TodoListVersion1";
 import { useState } from "react";
 import UseEffectFeature from "./features/UseEffect";
+import OtherFeature from "./features/OtherFeature";
+import TabsWithApi from "./features/TabsWithApi";
+import GoToTopButton from "./features/GoToTopButton";
+import WidthOfWindow from "./features/WidthOfWindow";
+import CountDown from "./features/CountDown";
+import ShowImage from "./features/ShowImage";
 
 const userdata = [
   {
@@ -1015,8 +1021,14 @@ function App() {
         data2={phone}
         data60User={newData}
       />
+      <ShowImage />
+      <CountDown />
+      <WidthOfWindow />
+      <GoToTopButton />
+      <TabsWithApi />
       {/* <NewTest /> */}
       {/* <ChangeNumber /> */}
+      {/* <OtherFeature /> */}
       <UseEffectFeature />
       <button className="btn btn-primary" onClick={() => setShow(!show)}>
         Show or Hidden
